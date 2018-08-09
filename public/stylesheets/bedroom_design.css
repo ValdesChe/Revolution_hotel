@@ -1,0 +1,312 @@
+ /*        *****************************************************************************************************
+  * 
+  * ******************************        CSS3 TRICK POWERED ON 17-07-2015 15:55  BGTE         *****************************
+  *     
+  *      *********************************         ALL RIGHT RESERVED CZV 2015	      **************************
+  */
+ 
+ /* MENU INTERNE A LA PAGE */
+  
+  
+  menu.setting_main {
+	height:36px;
+	padding-top:3px;
+	padding-bottom:5px;
+	background: white;
+	border-radius:10px;
+}
+
+
+menu.setting_main ul{
+	margin-left:-65px;
+	margin-top:-2px;
+	display:inline-block;
+	
+}
+
+
+menu.setting_main ul li{
+	display: inline-block;
+	width:150px;
+
+	border-radius:5px;
+	padding-top: 2px;
+	padding-bottom:2px;
+	
+}
+
+menu.setting_main ul li a img{
+   box-shadow:0px 1px 3px yellow ;
+   border:none;
+   border-radius: 5px 15px 5px 15px;
+   transition:all 0.5s ease-in;
+}
+
+menu.setting_main ul li a img:hover{
+	box-shadow:0px 2px 5px red ;
+	border-radius: 10px 7px 10px 7px;
+}
+
+
+menu.setting_main ul li a{
+   text-decoration: none;
+}
+
+ 
+ 
+ article div#chamb{
+ 	width:205px;
+ 	height:250px auto;
+ 	margin:5px;
+ 	float:left;
+ 	background:rgba(15,125,325,0.8);
+ 	padding: 5px;
+ 	border-radius: 1px 15px 1px 15px;
+ 	box-shadow: 0px 2px 10px white;
+ }
+ 
+	
+	
+	article div#chamb h3{
+	color:white;
+	text-shadow: 0px 1px 7px grey;
+	text-align:center;
+	text-decoration:overline;
+	
+	}
+	
+    article div#chamb #ch:last-child{
+    	margin-bottom: 4px;
+    }
+	
+	#ch {
+	position:justify;
+	margin-top:2px;
+	border:1px solid aqua;
+	background:white;
+	font-size:17px;
+   
+	text-align:center;
+	border-radius:5px;
+	padding:2px 2px 2px 2px;
+	transition: all 0.5s ease-in;
+	}
+	
+	#ch:hover {
+	width:100%;
+	font-size:18px;
+	padding:3px 3px 3px 3px;
+	background:rgba(12,254,362,0.9);
+	opacity:0.9;
+	cursor:pointer;
+	color:white;
+	
+	}
+	
+	
+    #img_stat{
+      width:15px;
+	  float:right;
+	  margin-top: 3px;
+     }	
+	  
+	 #contenu{
+	width:100%;
+	height:auto;
+	margin-top:10%;
+	 
+	 
+    }
+	  
+    div#ch>span{
+   font-family:Verdana;
+    display:none;
+  text-decoration:none;
+  z-index:2000;
+  font-size:12px;
+  background:rgba(24,5,180,0.9);
+  width:auto;
+  color:white;
+  
+  
+   
+    /* On positionne notre infobulle. */
+   top:auto;
+   left:auto;
+   right:auto;
+   text-align:left;
+   vertical-align:middle;
+  
+   padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow:0px 3px 5px rgba(24,24,254,0.8);
+  
+    }
+    
+    
+    div#ch span.empty{
+    background:#00FF00;
+    text-shadow: 2px 3px 5px black;	
+    }
+    
+    div#ch>span.empty:before{
+  border-bottom-color:#00FF00;
+ 
+    }
+    
+    div#ch>span:before{
+   content:"";
+		height:0;
+  width: 0;
+  position:absolute;
+  pointer-events:none;
+		border: 8px solid rgba(3, 3, 0, 0);
+		border-bottom-color: rgba(24, 5, 180, 0.9);
+		left:25px;
+  top:-13px;
+    }
+    
+    div#ch:hover>span{
+  
+    display: block; /* On affiche l'infobulle. */
+    position: absolute;	
+    	
+    }
+    
+    div#ch span span{
+     font-family:bree;
+     font-size:15px;
+     color:#FF0000;
+    }
+
+   ul.box-legend-sharing{
+   	visibility:hidden;
+   	background:rgba(324,80,180,0.7);
+   	padding:10px;
+   	width:160px;
+   	font-size:14px;
+   	height:auto;
+   	position:absolute;
+   	border-radius:4px;
+   	right:150px;
+   	top:90px;
+   	z-index:-100;
+   	transition: all 0.95s ease;
+   	opacity: 0.2;
+   }
+
+   ul.box-legend-sharing:after {
+   	content:"";
+	   height:0;
+  width: 0;
+  position:absolute;
+  -moz-pointer-events:none;
+	   border: 15px solid rgba(3, 3, 0, 0);
+	   border-right-color: rgba(324, 80, 180, 0.7);
+	   left:-30px;
+  top:50px;
+   }
+   
+    
+   ul.box-legend-sharing li{
+   	display:inline-block;
+   	margin-top:1px;
+   	width: 155px;
+   	background: white;
+   	padding:3px;
+   	float: left;
+   }
+   
+   ul.box-legend-sharing li img {
+   	width:20px;
+   	height:20px;
+   	display: inline-block;
+   	vertical-align: middle;
+   	float:left;
+   	margin-left: 2px;
+   	margin-right: 3px;
+   }
+
+   
+   div.container:hover ul.box-legend-sharing{
+   	visibility:visible;
+   	right:1px;
+   	z-index:1000;
+   	opacity: 1;
+   }
+   /* <!-- fin -->
+   
+   
+   
+   /**** ZONE DE LA FREQUENCE D OCCUPATION *****
+  
+  <-- Debut --> */
+  
+  div.z_f_o{
+  	background:rgba(0,251,154,0.6);
+  	width:auto;
+  	border-radius:10px;
+  	height:420px;
+  	padding: 10px;
+  	margin-top: 2px;
+  	overflow: auto;
+  }
+  
+  
+  fieldset{
+  	width:550px;
+  	vertical-align:middle;
+  	margin-left:35px;
+  	background: rgba(13,251,5,0.45);
+  	border-radius: 10px;
+  	border:1px solid white;
+  	padding: 10px;
+  }
+  
+  
+  fieldset  legend{
+  	padding: 3px;
+  	padding-left:10px;
+  	font-size: 19px;
+  	margin-left:10px;
+  	background:rgba(13,251,5,0.45);
+  	color:navy;
+  	text-shadow: 0px 3px 2px aqua;
+  	border: 1px solid white;
+  	border-radius: 10px;
+  	
+  }
+  
+  
+  fieldset div.eight-columns{
+  	width:530px;
+  	border:1px solid grey;
+  	padding: 10px;
+  	border-radius:5px;
+  	
+  } 
+  
+  
+  fieldset div.eight-columns label {
+  	display:block;
+  	margin-top: 10px;
+  	margin-bottom: -5px;
+  	margin-left:27px;
+  	vertical-align: middle;
+  	color: white;
+  	text-shadow:1px 2px 1px navy;
+  	font-size: 16px;
+  	
+  } 
+  
+  fieldset div.eight-columns .action_z {
+  	border:1px solid grey;
+  	padding: 5px;
+  	
+  } 
+  
+  
+

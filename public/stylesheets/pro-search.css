@@ -1,0 +1,88 @@
+/*  ALL RIGHT RESERVED   
+ *
+ *     **********          * *      * *
+ *   *  *********          * *      * *
+ *  *  * 				   * *      * *
+ *  * * 				   *  * ** *  *
+ *  * *     ********       * * **** * *  
+ *  * *        * *         * *      * *
+ *  *  * ****** *      	   * *      * *
+ *    *  ********          * *      * *
+ *  
+ */
+
+
+
+article div{
+	display:block
+	outline:groove;
+	padding:2px;
+	height:auto;
+	color:#181818;
+	float:left;
+}
+
+
+/*DIV CONTENANT LE MENU CLIQUABLE */
+article div.sub-menu-light{
+	border:1px solid #DFE9EC;
+	background:white;
+	width:210px;
+}
+
+article div.sub-menu-light ul{
+	border:1px solid #DFE9EC;
+	background:white;
+	
+	overflow: hidden;
+}
+
+article div.sub-menu-light ul li{
+	border:1px solid #808000;
+	background:white;
+	display: block;
+	font-family:"New York";
+	padding: 2px;
+}
+
+article div.sub-menu-light ul li a{
+	padding:2px;
+	background:lime;
+	display: block;
+	
+}
+
+article div.sub-menu-light ul li a:hover{
+	background:#08A1D4;
+	transition:all 1.5s ease;
+}
+
+ 
+
+
+
+
+/* DIV CONTENANT LES RESULTATS */
+article div.results-container{
+	border:1px solid #DFE9EC;
+	background:white;
+	width:445px;
+	height:400px;
+	position:relative;
+	
+}
+
+article div.results-container div{
+	border:1px solid #DFE9EC;
+	background:#3F9DB8;
+	width: 430px;
+	height:auto;
+	position: absolute;
+}
+
+article div.results-container div:first-child{
+  z-index: 100;
+  
+	
+}
+

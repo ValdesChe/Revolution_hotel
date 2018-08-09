@@ -1,0 +1,148 @@
+@(user : User , add: Form[Bedrooming.newBedroom] , typeBed : List[TypeBed] , AllBeds:List[Bedroom], msg : String)
+@scripts  = {
+
+}
+
+
+@dashedboard(user , scripts){
+    <div class="" >
+        <div class="access-menu">
+            <ul class="items-access">
+                <li><a href="#new" class="linker">Nouvelle Chambre</a></li>
+                <li><a href="#listing" class="linker defaultLi" id="defaultLi">Listing Chambre et type</a></li>
+                <li><a href="#modif" class="linker">Modification</a></li>
+                <li><a href="#" class="linker">DANSGER</a></li>
+            </ul>
+        </div>
+        <div id="container-access">
+
+        </div>
+
+        <div style="display: none;"   class="dialogBox" id="hidden-content1">
+            <h1 style="padding: 25px; margin: 15px; width: auto;"  id="messenger">@Messages(msg)</h1>
+        </div>
+        <a data-fancybox data-src="#hidden-content1" style="visibility: hidden;display: none;"  id="alerto" class="alerter" href="javascript:;">Nouveau Client</a>
+    </div>
+
+
+
+    <script language="JavaScript">
+        /*
+            document.getElementById("ch").addEventListener('click',function () {
+                document.location = "/";
+            });
+            */
+            function someF(elt) {
+                console.log(elt.getAttribute("class"));
+                document.location = "http://localhost:9000/Bedroom/"+elt.getAttribute("class");
+            }
+            $(document).ready(function () {
+
+                var alerter = document.getElementById("hidden-content1").innerHTML;
+                if(alerter.search("nothing") < 1 ){
+                    // filter for error msg
+                    if( (alerter.search("no")> 0 || alerter.search("ne") > 0 || alerter.search("not") > 0 )){
+                        document.getElementById("messenger").style.color = "red";
+                        document.getElementById("hidden-content1").style.border = "2px solid red";
+                    }
+                    else{
+                        document.getElementById("messenger").style.color = "green";
+                        document.getElementById("hidden-content1").style.border = "2px solid aqua";
+                    }
+
+                    var linky = document.getElementById("alerto");
+                    linky.click();
+                }
+                $('a.linker').click(function(event) {
+                    event.preventDefault();
+                    var elt = $(this).attr('href');
+                    // var container = document.getElementById("container-access").innerHTML;
+                    var container = $("#container-access");
+                    // console.log(container);
+
+                    var newBed = "\
+                        <form action='@routes.Bedrooming.saveNewBed()' class='shorcutform' method='POST'>\
+                            <div class='form-container-sh'>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='name'> Type de Chambre : </label>\
+                                     <select name='indiceType'>\
+                                        @for( types <- typeBed){\
+                                             <option value='@types.id'>@types.title &nbsp; -  @types.creation.toLocalDate </option> \
+                                        }\
+                                     </select>\
+                                    <span class='tooltip'></span>\
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                            </div>\
+                            <div class='form-submitter-sh'>\
+                                <input type='submit' class='validator validator-btn-sh'  value='ENVOYER'>\
+                            </div>\
+                        </form>";
+
+
+                    var ListBedAndType ="\
+                            <div class='form-container-sh container'>\
+                                <div class='form-item-sh' style='padding-top:10px;'>\
+                                     @for(typo <- typeBed ){\
+                                     <div id='chamb'>\
+                                         <h3 title=' Date creation: @typo.creation.toLocalDate'> @typo.title - @typo.numbers - </h3>\
+                                        <hr>\
+                                        @for(typf <- AllBeds ){\
+                                            @if(typf.name.contains(typo.title.substring(0,2).toUpperCase())){\
+                                                @if(typf.status.equals(1) || typf.status.toString == "1"){\
+                                                    <div id='ch' onClick='someF(this);' class='@typf.id' title='Cliquer pour plus d information !'>\
+                                                        Chambre @typf.name  <img src='/assets/images/success.png' id='img_stat'>\
+                                                        <span class='empty'>Chambre libre ... </span> \
+                                                    </div>\
+                                                }\
+                                                @if(typf.status.equals(0) || typf.status.toString == "0"){\
+                                                    <div id='ch' onClick='someF(this);' class='@typf.id' title='Cliquer pour plus d information !'>\
+                                                         Chambre @typf.name <img src='/assets/images/error.png' id='img_stat'>\
+                                                         <span class='help'>Chambre oCCupée ... </span>\
+                                                    </div>\
+                                                }\
+                                                @if(typf.status.equals(2) || typf.status.toString == "2"){\
+                                                    <div id='ch' onClick='someF(this);' class='@typf.id' title='Cliquer pour plus d information !'>\
+                                                         Chambre @typf.name <img src='/assets/images/chant.png' id='img_stat'>\
+                                                         <span class=''>Chambre En Chantier... </span> \
+                                                    </div>\
+                                                }\
+                                            }\
+                                        }\
+                                    </div>\
+                                    }\
+                                </div>\
+                                <ul class='box-legend-sharing'>\
+                                    <li class='link-legend'>\
+                                        <img src='/assets/images/success.png' class='img_express'>  Chambre libre ..\
+                                    </li>\
+                                    <li class='link-legend'>\
+                                        <img src='/assets/images/chant.png' class='img_express'>  Chambre occupée ..\
+                                    </li>\
+                                    <li class='link-legend'>\
+                                        <img src='/assets/images/error.png' class='img_express'>  Chambre en chantier ..\
+                                    </li>\
+                               </ul>\
+                       </div> ";
+
+                    container.slideDown();
+
+                    if (elt == "#new") {
+                        container.html(newBed);
+                    } else if (elt == "#listing") {
+                        container.html(ListBedAndType);
+                    } else if (elt == "#Modify") {
+                        container.html("Modify");
+                    } else if (elt == "#Available") {
+                        container.html("Available");
+                    } else {
+                        container.html("Pricing --------");
+
+                    }
+                });
+            });
+    </script>
+
+
+}

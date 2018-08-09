@@ -1,0 +1,100 @@
+@( user :User , beds: List[Bedroom] , cusForm: Form[Customering.NewTempCustomer] , typeBed : List[TypeBed] , msg : String )
+
+@import helper._
+
+@scripts= {
+}
+
+@dashedboard(user , scripts) {
+<!-- MENU DE GAUCHE  -->
+
+  <div class="" >
+        <div class="access-menu">
+            <ul class="items-access">
+                <li><a href="#new" class="linker">Nouveau Client</a></li>
+                <li><a href="#listing" class="linker defaultLi" id="defaultLi">Recherche Avancée</a></li>
+            </ul>
+        </div>
+        <div id="container-access">
+
+        </div>
+
+        <div style="display: none;"   class="dialogBox" id="hidden-content1">
+            <h1 style="padding: 25px; margin: 15px; width: auto;"  id="messenger">@Messages(msg)</h1>
+        </div>
+        <a data-fancybox data-src="#hidden-content1" style="visibility: hidden;display: none;"  id="alerto" class="alerter" href="javascript:;">Nouveau Client</a>
+    </div>
+
+
+
+    <script language="JavaScript">
+        /*
+            document.getElementById("ch").addEventListener('click',function () {
+                document.location = "/";
+            });
+            *
+            * */
+            $(document).ready(function () {
+
+                var alerter = document.getElementById("hidden-content1").innerHTML;
+                if(alerter.search("nothing") < 1 ){
+                    // filter for error msg
+                    if( (alerter.search("no")> 0 || alerter.search("ne") > 0 || alerter.search("not") > 0 )){
+                        document.getElementById("messenger").style.color = "red";
+                        document.getElementById("hidden-content1").style.border = "2px solid red";
+                    }
+                    else{
+                        document.getElementById("messenger").style.color = "green";
+                        document.getElementById("hidden-content1").style.border = "2px solid aqua";
+                    }
+
+                    var linky = document.getElementById("alerto");
+                    linky.click();
+                }
+
+                $('a.linker').click(function(event) {
+                    event.preventDefault();
+                    var elt = $(this).attr('href');
+                    // var container = document.getElementById("container-access").innerHTML;
+                    var container = $("#container-access");
+                    // console.log(container);
+
+                    var newCus = "\
+                        <form action='@routes.Customering.saveTempo()' class='shorcutform' method='POST'>\
+                            <div class='form-container-sh'>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='name'> Matricule /CIN: </label>\
+                                      <input type='text' placeholder='' name='mat' required> \
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='name'> Pays/Country : </label>\
+                                        <input type='text' placeholder='' name='country' required>\
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                            </div>\
+                            <div class='form-submitter-sh'>\
+                                <input type='submit' class='validator validator-btn-sh'  value='ENVOYER'>\
+                            </div>\
+                        </form>";
+
+                    container.slideDown();
+
+                    if (elt == "#new") {
+                        container.html(newCus);
+                    } else if (elt == "#listing") {
+                        container.html("Listing something lol xD :((");
+                    } else if (elt == "#PresentCus") {
+                        container.html("Presently in the bedroom ");
+                    } else {
+                        container.html("---- OTHER THINK GUy ----");
+
+                    }
+
+                });
+            });
+    </script>
+
+}

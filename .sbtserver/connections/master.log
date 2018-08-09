@@ -1,0 +1,8 @@
+New log file opened at Sun Jul 16 02:59:19 WEST 2017 by 10052@sggn
+Taking next connection to: 55400
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 10052@sggn logs at Sun Jul 16 03:02:20 WEST 2017, goodbye.

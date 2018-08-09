@@ -1,0 +1,320 @@
+  /* Style pour le menu
+   Navigation */
+  /****** MENU STYLE ONLY ****/
+
+  .bloc_page nav {
+      display: inline-block;
+      width: 990px auto;
+      position: fixed;
+      background: url('../images/objectif.png') no-repeat;
+      border-bottom: 1px solid blue;
+      transition: all 0.5s ease-in;
+      z-index: 1;
+      padding-right: 12px;
+  }
+
+  .bloc_page nav:hover {
+      border-bottom: 2px solid blue;
+      box-shadow: 0px 3px 8px white;
+  }
+
+  .bloc_page nav .menu a:focus {
+      text-shadow: 0px 2px 10px aqua;
+  }
+
+
+  .bloc_page nav .menu {
+      float: left;
+      width: 535px;
+      height: 35px;
+      margin-top: 10px;
+      list-style: none;
+  }
+
+
+  nav .menu>li {
+      display: inline-block;
+      margin-right: 1px;
+      vertical-align: top;
+  }
+
+
+  nav .menu>li a {
+      text-transform: uppercase;
+  }
+
+
+  nav .menu>li>a.home_link {
+      padding-left: 2px;
+      margin-right: 10px;
+  }
+
+  nav .menu>li>a.home_link img {
+      border: none;
+      margin-top: -7px;
+      opacity: 0.4;
+      margin-left: -25px;
+  }
+
+  nav .menu>li>a.home_link img:hover {
+      opacity: 0.9;
+  }
+
+
+  nav .menu>li>a.liens {
+      font-size: 1.3em;
+      padding: 2px;
+      color: oldlace;
+      text-decoration: none;
+      transition: all 0.8s ease;
+      -moz-transition: all 0.8s ease;
+      -o-transition: all 0.7s ease;
+      -ms-transition: all 0.8s ease;
+      -webkit-transition: all 0.8s ease;
+  }
+
+
+  nav .menu>li>a.liens:hover {
+      color: white;
+      text-shadow: 0px 0px 10px aqua;
+      border-bottom: 3px solid blue;
+      font-weight: bold;
+  }
+
+  nav .menu li ul {
+      float: none;
+      border: none;
+      border-collapse: none;
+      display: none;
+      position: absolute;
+      -moz-transition: all 2s ease;
+      -o-transition: all 1.5s ease;
+      -webkit-transition: all 1.5s ease;
+      -ms-transition: all 1.5s ease;
+      transition: all 2s ease;
+      padding: 10px;
+      border-radius: 1px 1px 10px 10px;
+  }
+
+
+  nav .menu li:hover ul {
+
+      float: none;
+      border: none;
+      border-collapse: inherit;
+      display: block;
+      background: url('../images/objectif.png') no-repeat;
+  }
+
+
+  nav .menu li ul li {
+      padding: 2px;
+      display: block;
+  }
+
+  nav .menu li ul li a {
+      background: #030542;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-decoration: none;
+      font-family: 'bree';
+      font-weight: bold;
+      transition: all 0.5s ease-in;
+      border-left: 2px solid oldlace;
+      border-radius: 0px 5px 5px 0px;
+      text-transform: uppercase;
+  }
+
+
+  nav .menu li ul li a:hover {
+      text-shadow: 1px 1px 6px violet;
+      color: white;
+      border-left: 2px solid red;
+      padding-left: 20px;
+  }
+  /******* ZoNE DE NOTIFICATIONS ET RECHERCHE ******/
+
+  nav .notif_zone {
+      width: 400px;
+      float: right;
+      height: 40px;
+      padding: 2px;
+  }
+  /****** RECHERCHE ******/
+
+  .search_bar {
+      position: justify;
+      width: 180px;
+      bottom: 0;
+      margin-top: 3px;
+      margin-left: 5px;
+      float: left;
+
+      padding-top: 3px;
+      padding-bottom: 2px;
+      padding-left: 5px;
+
+      font-size: 0.8em;
+      display: inline-block;
+  }
+
+  .search_engine {
+      font-family: 'bree';
+      width: 110px;
+      height: 30px;
+      outline: none;
+      background: transparent;
+      border: 1px solid blue;
+      padding-right: 5px;
+      padding-left: 10px;
+      font-size: 1.2em;
+      transition: all 1.5s ease;
+      color: olive;
+      box-shadow: 7px 0px 7px blue;
+  }
+
+  .search_engine:focus {
+      width: 150px;
+      background-color: rgb(24, 24, 24);
+      /* Pour les anciens navigateurs*/
+      background-color: rgba(24, 24, 214, 0.8);
+      border: 1px solid blue;
+      color: white;
+      padding-left: 15px;
+      box-shadow: 5px 0px 5px white;
+  }
+
+  nav .sender {
+      width: 30px;
+      height: 30px;
+      background: url('../images/data.png') no-repeat;
+      border: none;
+      padding: 5px;
+      margin-left: -1px;
+      cursor: pointer;
+  }
+  /***  NOTIFICATIONS ****/
+
+  nav .notif {
+      width: 160px;
+      height: 35px;
+      float: right;
+      margin-right: 5px;
+      padding-top: 2px;
+  }
+
+
+
+
+  nav .notif>li {
+      display: inline-block;
+      margin-top: -20px;
+      cursor: pointer;
+  }
+
+
+  nav .notif li a.valid:hover {
+      background: none;
+      /* Correction d'un bug d'Internet Explorer. */
+      z-index: 500;
+      /* On définit une valeur pour l'ordre d'affichage. */
+      cursor: help;
+      /* On change le curseur par défaut par un curseur d'aide. */
+  }
+
+  nav .notif li a span.help {
+      display: none;
+      text-decoration: none;
+      z-index: 2000;
+  }
+
+  nav .notif li a:hover span.help {
+      display: inline;
+      /* On affiche l'infobulle. */
+      position: absolute;
+      white-space: nowrap;
+      position: absolute;
+
+      /* On positionne notre infobulle. */
+      top: 30%;
+      right: 5%;
+      margin: 4% 2% 12% 0%;
+      font-family: "Bradley Hand ITC";
+      background: rgba(121, 213, 10, 0.7);
+      color: white;
+      font-size: 16px;
+      border: 1px solid rgba(121, 213, 10, 0.7);
+      padding-bottom: 10px;
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 3px;
+      box-shadow: 0px 3px 15px black;
+  }
+
+
+
+
+
+
+
+  .fact,
+  .reserv,
+  nav .new {
+      width: 45px;
+      height: 45px;
+  }
+
+
+  .fact {
+      background: url('../images/out.png') no-repeat;
+  }
+
+  .reserv {
+      background: url('../images/confirm.png') no-repeat;
+  }
+
+  .new {
+      background: url('../images/new.png') no-repeat;
+  }
+
+
+  nav .notif_zone .notif li a.valid {
+      background: red;
+      border: 1px solid white;
+
+      text-decoration: none;
+      color: white;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-shadow: 0px 1px 5px red;
+  }
+
+
+  nav .notif a {
+      margin-top: 5px;
+  }
+
+
+
+  @media (max-width: 900px) {
+
+      nav .menu>li>a.home_link {
+          padding-left: 1px;
+          margin-right: 5px;
+      }
+      nav .menu>li>a.liens {
+
+          font-size: 1em;
+          padding: 1px;
+      }
+
+      nav .notif_zone li a {
+          cursor: pointer;
+      }
+  }

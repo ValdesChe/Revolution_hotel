@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="SBT: com.typesafe.play:play-java_2.10:2.4.6:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.play:play_2.10:2.4.6:jar" level="project" />
+    <orderEntry type="module" module-name="routes" />
+    <orderEntry type="library" name="SBT: com.typesafe.play:play-ebean_2.10:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.avaje.ebeanorm:avaje-ebeanorm:4.6.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.play:play-mailer_2.10:3.0.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: joda-time:joda-time:2.8.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: ch.qos.logback:logback-core:1.1.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.10.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: javax.persistence:persistence-api:1.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.apache.commons:commons-email:1.3.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.google.inject:guice:4.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: javax.inject:javax.inject:1:jar" level="project" />
+    <orderEntry type="module" module-name="twirl" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/redist/annotations-java8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

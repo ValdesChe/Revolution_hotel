@@ -1,0 +1,227 @@
+@(user : User, scripts: Html = Html(""))(content: Html)
+@import helper._
+<!DOCTYPE html>
+<head>
+    <title>@Messages("title")</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/home_design.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bedroom_design.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main_style.css")" media="screen">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main_left.css")" media="screen">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/aside.css")" media="screen">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/form.css")" media="screen">
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/form-sh.css")" media="screen">
+    <link href="@routes.Assets.at("javascripts/fancybox-master/dist/jquery.fancybox.css")" rel="stylesheet">
+    <script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-migrate-1.2.1.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/fancybox-master/dist/jquery.fancybox.js")"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+</head>
+
+<body id="login_page">
+    @scripts
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // Links in the navigation - shortcuts
+        $('a.bed-sh').click(function(event) {
+            event.preventDefault();
+            var elt = $(this).attr('href');
+            var container = document.getElementById("menu_left").innerHTML;
+            // console.log(container);
+
+            var newBed = "\
+                <form action='/dashboard/' class='shorcutform' method='GET'>\
+                    <div class='form-container-sh'>\
+                        <div class='form-item-sh'>\
+                            <label class='form_col' for='name'> Type de Chambre : </label>\
+                            <input type='text' name ='typeBed' class='text-item-sh' required>\
+                            <span class='tooltip'></span>\
+                            <br/>\
+                            <br/>\
+                        </div>\
+                    </div>\
+                    <div class='form-submitter-sh'>\
+                        <input type='submit' class='validator validator-btn-sh' value='ENVOYER'>\
+                    </div>\
+                </form>";
+
+            $("#Shower").slideDown();
+
+            if (elt == "#new") {
+                $("#Shower").html(newBed);
+            } else if (elt == "#pricing") {
+                $("#Shower").html("Pricing");
+            } else if (elt == "#Modify") {
+                $("#Shower").html("Modify");
+            } else if (elt == "#Available") {
+                $("#Shower").html("Available");
+            } else {
+                $("#Shower").html("Pricing --------");
+
+            }
+
+        });
+
+        //
+        $('a.typB-sh').click(function(event) {
+                event.preventDefault();
+                var elt = $(this).attr('href');
+                var container = document.getElementById("menu_left").innerHTML;
+                // console.log(container);
+
+                var newTypeBed = "<form action='/dashboard/' class='shorcutform' method='GET'>"+
+                    "<div class='form-container-sh'>"+
+                        "<div class='form-item-sh'>"+
+                            "<label class='form_col' for='name'>Nom du nouveau Type : </label>"+
+                            "<input type='text' class='text-item-sh' name='typeName' required maxlength='15'>"+
+                            "<span class='tooltip'></span>"+
+                            "<br/>"+
+                            "<br/>"+
+                        "</div>"+
+                      
+                        "<div class='form-item-sh'>"+
+                         "   <label class='form_col' for='price'>Prix du Nouveau Type : </label>"+
+                            "<input type='number' class='text-item-sh' name='typePrice' required maxlength='15'>"+
+                           " <span class='tooltip'></span>"+
+                           " <br/>"+
+                           " <br/>"+
+                        "</div>"+
+                   " </div>"+
+                    "<div class='form-submitter-sh'>"+
+                     "   <input type='submit' class='validator validator-btn-sh' value='ENVOYER'>"+
+                    "</div>"+
+                "</form>";
+                var std = " something New comming soon ";
+
+
+                $("#Shower").slideDown();
+
+                if (elt == "#new") {
+                    $("#Shower").html(newTypeBed);
+                } else if (elt == "#pricing") {
+                    $("#Shower").html("Pricing");
+                } else if (elt == "#Modify") {
+                    $("#Shower").html("Modify");
+                } else if (elt == "#Available") {
+                    $("#Shower").html("Available");
+                } else {
+                    $("#Shower").html("Pricing --------");
+
+                }
+
+            });
+    });
+    </script>
+
+    <nav class="menu_left" id="menu_left">
+        <ul>
+            <li><a href=""><img src="@routes.Assets.at("images/3page-img1.jpg")"><span class="help"> Page d'accueil ...</span></a></li>
+            <li><a href=""><img src="@routes.Assets.at("images/3page-img2.jpg")"><span class="help"> Méssagerie  ...</span></a></li>
+            <li><a href=""><img src="@routes.Assets.at("images/3page-img1.jpg")"><span class="help"> Discussion ...</span></a></li>
+            <li><a href=""><img src="@routes.Assets.at("images/3page-img4.jpg")"><span class="help"> Aide   ...</span></a></li>
+        </ul>
+    </nav>
+    <div class="bloc_page" id="top">
+        @menu(user)
+        <div id="banniere_image">
+            <div id="banniere_description">
+                Chambres total confortables ...
+            </div>
+        </div>
+        <!-- CONTENU APPRRECIABLE DE LA PAGE -->
+        <section>
+            <!-- MENU DE GAUCHE DANS LE CONTENEUR -->
+            <!--DEBUT   -->
+            <aside>
+                <div class='boxes'>
+                    <div class='avant' id='first'>
+                        <div class='image_ptit'>
+                        </div>
+                        <div class='image_description'>
+                            <h5>@Messages("menu.bed")</h5>
+                            <ul>
+                                <li class="sub-main"><a href="#new" class="bed-sh">Nouvelle</a></li>
+                                <li class="sub-main"><a href="#available" class="bed-sh">Disponibility</a></li>
+                                <li class="sub-main"><a href="#Modify" class="bed-sh">Modify</a></li>
+                                <li class="sub-main"><a href="#pricing" class="bed-sh">Price</a></li>
+                                <li class="sub-main"><a href="#statify" class="bed-sh">Statify</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class='boxes'>
+                    <div class='avant' id='first'>
+                        <div class='image_ptit'>
+                        </div>
+                        <div class='image_description'>
+                            <h5>@Messages("menu.cus")</h5>
+                            <ul>
+                                <li class="sub-main"><a href="#new" class="cust-sh">Nouveau Client</a></li>
+                                <li class="sub-main"><a href="#available" class="cust-sh">Disponibility Customer</a></li>
+                                <li class="sub-main"><a href="#modify" class="cust-sh">Modify Info Cus</a></li>
+                                <li class="sub-main"><a href="#Statisfy" class="cust-sh">Statify Customer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class='boxes'>
+                    <div id='first' class="avant">
+                        <div class='image_ptit'>
+                        </div>
+                        <div class='image_description'>
+                            <h5>Type de Chambre</h5>
+                            <ul>
+                                <li class="sub-main"><a href="#new" class="typB-sh">Nouveau TYpe de Chambre</a></li>
+                                <li class="sub-main"><a href="#modify" class="typB-sh">Modify Type Chambre</a></li>
+                                <li class="sub-main"><a href="#Statisfy" class="typB-sh">Statify TypeChambre</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- CONTENEUR DES OPTIONS RAPIDES ...  -->
+            <article id="Shower" style="{padding-bottom:10px;}">
+                @content
+            </article>
+        </section>
+    </div>
+    <footer>
+        <div id="tweet">
+            <h3>Qui nous sommes :</h3>
+            <ul>
+                <li><a href="#">Plan du site </a></li>
+                <li><a href="#menu_left:hover">Partenaires</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </div>
+        <div id="mes_photos">
+            <h3>Mes photos</h3>
+            <p>
+                <img src="@routes.Assets.at("images/3page-img1.jpg ")" alt="Photographie" />
+                <img src="@routes.Assets.at("images/3page-img2.jpg ")" alt="Photographie" />
+                <img src="@routes.Assets.at("images/3page-img3.jpg ")" alt="Photographie" />
+                <img src="@routes.Assets.at("images/3page-img4.jpg ")" alt="Photographie" />
+            </p>
+        </div>
+        <div id="mes_amis">
+            <h3>Valdor ZOne</h3>
+            <ul>
+                <li><a href="#">Valdor</a></li>
+                <li><a href="#">Mr Valdor</a></li>
+                <li><a href="#">AWESOME</a></li>
+                <li><a href="#">YOUTHSKILLs.cm</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Yeppo</a></li>
+                <li><a href="#">Gangster</a></li>
+                <li><a href="#">Bourgeois</a></li>
+                <li><a href="#">Mr Valdor</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

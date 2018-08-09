@@ -1,0 +1,93 @@
+@(user: User , cusForm: Form[Customering.NewTempCustomer])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@if(user != null) {
+@if(user.typeu_id == "2") {
+<div class="optionable  custome" >
+	<div class="header-opt">
+		<span class="titled-opt">Clients</span>
+		<span class="description">Vous trouverez les traitements posibles sur les clients ...</span>
+	</div>
+	<div class="caroussel-opt">
+			
+		
+			<div class="cards" id="oups" style="top:3px;left: 4px;"  >
+				<div class="card-head">
+					
+				</div>
+				<div class="card-body">
+                    <div class="card-body-header">
+                        <a data-fancybox data-src="#hidden-content1" href="javascript:;">Nouveau Client</a>
+                    </div>
+                </div>
+			</div>
+
+			<div style="display: none;"  class="dialogBox" id="hidden-content1">
+				@form(controllers.routes.Customering.saveTempo(), 'class -> "login-form" ,'name-> "login-form") {
+				   <div class="">
+				      <h3>Entrez le numero de carte d'identité du client . </h3>
+				       @inputText(
+				            cusForm("mat"),
+				            'placeholder -> "Number de CNI",
+				            '_label -> null,
+				            '_help -> "",
+				            'size -> "35",
+				            'class -> "",
+				            'maxlength -> "20",
+				            'type -> "number"
+					   )
+
+
+				       @inputText(
+				            cusForm("country"),
+				            'placeholder -> "Country",
+				            '_label -> null,
+				            '_help -> "",
+				            'size -> "35",
+				            'class -> "",
+				            'maxlength -> "20",
+				            'type -> "text"
+				        )
+
+
+				   </div>
+				   <div class="footer" style="display: inline-block;padding: 5px;">
+				        <input type="submit" class="submitter" style="" value="@Messages("signin.signin")">
+				   </div>
+				}
+
+			</div>
+
+			<div class="cards" id="new" style=""  >
+				<div class="card-head">
+					
+				</div>
+				<div class="card-body">
+                    <div class="card-body-header">
+                        <a href="#">Nouveau Client</a>
+                    </div>
+                </div>
+			</div>
+		
+	</div>
+</div>
+<div class="optionable bedroo">
+	<div class="header-opt">
+		<span class="titled-opt">Chambres</span>
+		<span class="description">Vous trouverez les traitements posibles sur les chambres ...</span>
+	</div>
+	<div class="caroussel-opt">
+		<a data-fancybox="gallery" href="@routes.Assets.at("images/bedroom/2.jpg")">
+			
+			<img src="" alt="one">
+		</a>
+		<a data-fancybox="gallery" href="@routes.Assets.at("images/bedroom/2.jpg")">
+			
+			<img src="" alt="two ">
+		</a>
+	</div>
+</div>
+}
+}

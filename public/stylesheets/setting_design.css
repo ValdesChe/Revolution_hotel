@@ -1,0 +1,84 @@
+/*    			*******************************                   *******************************
+  		 ************************             ALL RIGHT RESERVED           ******************************
+ **************					          POWERED BY VALDES CHE (BUG)					  ******************************
+ 	     ************************	     << Technology used: CSS 3 >>   	******************************
+ 
+      			*******************************		        	   *******************************
+ */
+
+
+
+menu.setting_main {
+	height:36px;
+	padding-top:3px;
+	padding-bottom:5px;
+	background: white;
+	border-radius:10px;
+}
+
+
+menu.setting_main ul{
+	margin-left:-65px;
+	margin-top:-2px;
+	display:inline-block;
+	
+}
+
+
+menu.setting_main ul li{
+	display: inline-block;
+	width:150px;
+
+	border-radius:5px;
+	padding-top: 2px;
+	padding-bottom:2px;
+	
+}
+
+menu.setting_main ul li a img{
+   box-shadow:2px 1px 5px yellow ;
+   border:none;
+   border-radius: 5px 15px 5px 15px;
+   transition:all 0.5s ease-in;
+}
+
+menu.setting_main ul li a img:hover{
+	box-shadow:0px 5px 10px red ;
+	border-radius: 10px 7px 10px 7px;
+}
+
+
+menu.setting_main ul li a{
+   text-decoration: none;
+}
+
+
+
+
+/******* ZONE D AFFICHAGE DU CONTENU DES PAGES ****/
+
+   article div.container {
+   	height:60%;
+   	margin-top:5px;
+   	padding:10px;
+   	background:#272858;
+   }
+
+
+   /*****BOX DE GAUCHE ET CELLE DE DROITE *** */
+
+  article div.container .first_box_set,article div.container .second_box_set{
+  	padding:10px;
+  	border-radius:4px;
+  	
+  	background:#D4DEDF;
+  }
+  
+  article div.container .first_box_set{
+  	float:left;
+  	width:35% auto;
+  }
+  article div.container .second_box_set{
+  	float:right;
+  	width:55% auto;
+  }

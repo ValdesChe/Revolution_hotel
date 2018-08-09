@@ -1,0 +1,69 @@
+ /*POWERED BY CHE ZOGOU*/
+ /*******************
+	CREATED   05/07/2015 13:20
+	*******************/
+ /*EXPORTED HERE 08-07-2015 11:13 */
+
+ /* MODIFICATION HISTORIC 
+	Reason vocabulary : 
+		o U  : update made in ...
+		o N  :  New idea ...
+		o R  :  Refactoring .....
+
+
+	ID 	 -	 Date	 			-		USer	-	Reason			-		Locaton
+	--------------------------------------------------------------------------------
+	1		30-01-2018 17:54			V@ldoR		UHomeDesign				Tetouan
+
+
+
+ */
+
+
+
+ .boxes {
+     width: 97%;
+     height: 160px;
+     padding-top: 10px;
+     padding-left: 4px;
+     background-color: rgb(24, 24, 24);
+     /* Pour les anciens navigateurs*/
+     background-color: rgba(24, 24, 214, 0.8);
+     
+     box-shadow: 1px 1px 10px 1px #1c1a19;
+     border-radius: 5px;
+     margin: 3px;   
+     float: left;
+ }
+
+ .boxes .avant,
+ .boxes #last {
+     width: 235px;
+     height: 150px;
+     background: blue;
+     border-radius: 5px;
+     margin: 5px;
+     border-radius: 4px;
+ }
+
+
+
+ .image_description h5 {
+     color: olive;
+     padding: 5px;
+     outline: none;
+     background: #DFE9EC;
+     border-radius: 5px 5px 0px 0px;
+     margin-bottom: 10px;
+ }
+
+ .image_description p {
+     color: olive;
+     text-align: center;
+     font-size: 15px;
+ }
+
+
+ .image_description a {
+     color: white;
+ }

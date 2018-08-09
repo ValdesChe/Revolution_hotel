@@ -1,0 +1,91 @@
+@(user:User , customer:Customer,  msg:String)
+@script={
+
+}
+
+@dashedboard(user , script){
+
+    <div class="" >
+        <div id="container-access">
+
+        </div>
+
+        <div style="display: none;"   class="dialogBox" id="hidden-content1">
+            <h1 style="padding: 25px; margin: 15px; width: auto;"  id="messenger">@Messages(msg)</h1>
+        </div>
+        <a data-fancybox data-src="#hidden-content1" style="visibility: hidden;display: none;"  id="alerto" class="alerter" href="javascript:;">Nouveau Client</a>
+    </div>
+
+
+
+    <script language="JavaScript">
+
+            $(document).ready(function () {
+                var alerter = document.getElementById("hidden-content1").innerHTML;
+                if(alerter.search("nothing") < 1 ){
+                    // filter for error msg
+                    if( (alerter.search("no")> 0 || alerter.search("ne") > 0 || alerter.search("not") > 0 )){
+                        document.getElementById("messenger").style.color = "red";
+                        document.getElementById("hidden-content1").style.border = "2px solid red";
+                    }
+                    else{
+                        document.getElementById("messenger").style.color = "green";
+                        document.getElementById("hidden-content1").style.border = "2px solid aqua";
+                    }
+
+                    var linky = document.getElementById("alerto");
+                    linky.click();
+                }
+
+                var FinishCus= "\
+                        <form action='@routes.Customering.saveNew()' class='shorcutform' method='POST'>\
+                            <div class='form-container-sh'>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='name'> Nom du client : </label>\
+                                     <input type='text' name='name' > \
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='gender'> Genre / Gender : </label>\
+                                     <select name='gender'>\
+                                       <option value='F'>FEMININ</option>\
+                                       <option value='M'>MASCULIN</option>\
+                                     </select>\
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='Phone number'> Telephone : </label>\
+                                     <input type='text' name='tel' placeholder='e.g: +212 6 _ _ _ _' >\
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                                <div class='form-item-sh'>\
+                                    <label class='form_col' for='email'> Mail: </label>\
+                                     <input type='text' name='email' placeholder='e.g:  _ _ _ _' >\
+                                    <br/>\
+                                    <br/>\
+                                </div>\
+                                <input type='hidden' name='mat' value='@customer.mat' >\
+                            </div>\
+                            <div class='form-submitter-sh'>\
+                                <input type='submit' class='validator validator-btn-sh'  value='ENVOYER'>\
+                            </div>\
+                        </form>";
+                // var container = document.getElementById("container-access").innerHTML;
+                var container = $("#container-access");
+
+                container.html(FinishCus);
+
+
+
+            });
+
+
+
+    </script>
+
+
+
+}

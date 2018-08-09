@@ -1,0 +1,102 @@
+@(AvailableBeds : List[Bedroom] , customerForm: Form[Customering.NewCustomer])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+    <!-- CONTENEUR DU FORMULAIRE D'ENREGISTREMENT  -->
+
+@form(controllers.routes.Customering.saveNew(), 'class -> "customer" ,'name-> "login-form") {
+       <div class="info_client">
+          <h3>Info clients</h3>
+           @helper.inputText(
+                customerForm("name"),
+                'placeholder -> Messages("fullname"),
+                '_label -> null,
+                '_help -> Messages("ngj"),
+                'class -> ""
+           )
+           @inputText(
+                customerForm("tel"),
+                'placeholder -> Messages("telephone"),
+                '_label -> null,
+                '_help -> null,
+                'class -> "",
+                'type -> "number"
+           )
+
+           @inputText(
+                customerForm("country"),
+                'placeholder -> Messages("Nationalité"),
+                '_label -> null,
+                '_help -> null,
+                'class -> ""
+           )
+
+           @inputText(
+                customerForm("mat"),
+                'placeholder -> Messages("Numero carte d'identité"),
+                '_label -> null,
+                '_help -> null,
+                'class -> "",
+                'type -> "number"
+           )
+
+           @inputText(
+                customerForm("email"),
+                'type -> "text",
+                '_label -> null,
+                'placeholder -> Messages("signin.your.email"),
+                '_help -> Messages("signin.your.email"),
+                'class -> ""
+           )
+           <br><br>
+
+        <span class="form_col">Sexe :</span>
+        <label class="selecto">
+
+            <input type="radio" name="gender" id="Homme" value="H">&nbsp;@Messages("Homme")
+
+        </label>
+        <label class="selecto">
+
+            <input type="radio" name="gender" id="Femme" value="F">&nbsp;@Messages("Femme")
+
+        </label>      
+        <br><br>
+    </div>
+    <div class="info_sejour" >
+       <h3>Info sejour</h3>
+       <br>
+        @for(beds <- AvailableBeds) {
+            beds.name
+            println(beds.prevind)
+        }                                                   
+        
+
+       <select name="bedroom_num" id="large" >
+           <option value="">..* Chambres disponibles *..</option>
+           <optgroup label="Suites">
+              Suites
+           </optgroup>
+
+           <optgroup label="Haut-standing">
+               Haut-standing
+           </optgroup> 
+
+           <optgroup label="Classiques">
+               Classiques
+           </optgroup>
+        </select>
+            <!-- // JOUR DE SORTIE DU CLIENT -->
+        <input type="date" maxlength="20" name="end" id="calendar" class="calendrier" autocomplete="off" placeholder="Jour de sortie / nombre de jour" >
+        <br>
+        <br>
+        <input type="submit" name="sender" class="sender" id="loger" placeholder="" value="ENREGISTRER" >
+        <br>
+        <div class="warning_zone">
+            <div class="bedroom">
+                <img src="@routes.Assets.at("images/bedroom/2.jpg")" height="135px" width="285px">
+            </div>
+        </div>
+    </div>
+}

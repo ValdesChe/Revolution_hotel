@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <title>Test HTML5 TEMPLATING</title>
+</head>
+
+<body>
+    <style type="text/css">
+     ::selection {
+        color: #fff;
+        background: #f676b2;
+        /* Safari */
+    }
+
+    ::-moz-selection {
+        color: #fff;
+        background: #f676b2;
+        /* Firefox */
+    }
+
+
+
+    form.shorcutform {
+        background: #fff1fd;
+        padding: 10px;
+        width: 500px;
+        margin: auto;
+    }
+
+    form .form-container-sh {
+        padding: 4px;
+        display: block;
+    }
+
+
+    form .form-item-sh label,
+    form .form-item-sh input {}
+
+    form .form-item-sh label {}
+
+
+    form .form-item-sh input {
+        float: right;
+    }
+
+
+    form .form-submitter-sh {
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+
+
+    form .form_col {
+        display: inline-block;
+        margin-right: 15px;
+        padding: 3px 0px;
+        width: 200px;
+        min-height: 1px;
+        text-align: right;
+    }
+
+    form input {
+        border: 1px solid #CCC;
+
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        outline: none;
+        /* Retire la bordure orange appliquÃ©e par certains
+	navigateurs (Chrome notamment) lors du focus des Ã©lÃ©ments <input> */
+    }
+
+
+    form input[type='text'] , form input[type='number']  {
+        width: 200px;
+        height: 30px;
+        padding:5px;
+        border: 1px solid black;
+
+        padding: 2px;
+        border: 1px solid #CCC;
+
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        outline: none;
+        /* Retire la bordure orange appliquÃ©e par certains
+	navigateurs (Chrome notamment) lors du focus des Ã©lÃ©ments <input> */
+    }
+
+
+
+    form input[type='text']:focus , form input[type='number']:focus  {
+
+        border-color: rgba(82, 168, 236, 0.75);
+        -moz-box-shadow: 0 0 8px rgba( 82, 168, 236, 0.5);
+        -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+        box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+    }
+
+
+
+    form .tooltip {
+        display: inline-block;
+        margin-left: 20px;
+        padding: 2px 4px;
+        border: 1px solid red;
+        font-size: 13px;
+        background-color: white;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        color: black;
+        opacity: 0.8;
+    }
+
+
+
+    form .validator-btn-sh{
+
+    }
+    </style>
+    <!-- // New type form -->
+    <form action="/dashboard/" class="shorcutform" method="GET">
+        <div class="form-container-sh">
+            <div class="form-item-sh">
+                <label class="form_col" for="name">NOm du nouveau Type : </label>
+                <input type="text" class="text-item-sh" required>
+                <span class="tooltip"></span>
+                <br/>
+                <br/>
+            </div>
+          
+            <div class="form-item-sh">
+                <label class="form_col" for="price">Prix du Nouveau Type : </label>
+                <input type="number" class="text-item-sh" required>
+                <span class="tooltip"></span>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="form-submitter-sh">
+            <input type="submit" class="validator validator-btn-sh" value="ENVOYER">
+        </div>
+    </form>
+</body>
+
+</html>

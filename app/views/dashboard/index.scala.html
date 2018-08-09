@@ -1,0 +1,71 @@
+@(user : User , content : Html , cusForm: Form[Customering.NewTempCustomer] )
+@scripts= {
+
+}
+
+
+@dashedboard(user, scripts) {
+   @optionsRapides(user ,  cusForm)
+}
+<!-- 
+
+<form  action="/Customer" method="POST" class="customer" >
+	
+	PREMIERE ZONE :  INFORMATION DU CLIENT
+	<div class="info_client">
+		
+		<h3>Info clients</h3>
+		<input type="text" maxlength="20" name="name" class="" placeholder="Nom du client ..." ><br>
+		<input type="number" maxlength="15" name="tel_num" class="" placeholder="Numéro de telephone ..." ><br>
+		<input type="text" maxlength="20" name="resid" class="" placeholder="Ville de residence" ><br>
+		<input type="number" maxlength="15" name="cni" class="" placeholder="Numero carte d'identité" ><br>
+		<input type="text" maxlength="20" name="electro" class="" placeholder="Adresse electronique ..."><br>
+		<br><br>
+		<span class="form_col">Sexe :</span>
+		<label class="selecto">
+			<input name="sex" type="radio" value="H"/>&nbsp;Homme
+		</label>
+		
+		<label>
+			<input name="sex" type="radio" value="F"/>&nbsp;Femme
+		</label>
+		
+		<br><br>
+		<input type="file" name="photographic" value="" placeholder="photo"><br>
+		<input type="text" maxlength="20" name="compagny" class="comp" placeholder="Nom des compagnons " >
+		<br>
+	</div>
+	<div class="info_sejour">
+		<h3>Info sejour</h3>
+		<br>
+		<select name="bedroom_num" id="large" >
+			<option value="">..* Chambres disponibles *..</option>
+			<optgroup label="Suites">
+				Suites
+			</optgroup>
+			<optgroup label="Haut-standing">
+				Haut-standing
+			</optgroup>
+			
+			<optgroup label="Classiques">
+				Classiques
+			</optgroup>
+			
+		</select>
+		// JOUR DE SORTIE DU CLIENT
+		<input type="date" maxlength="20" name="end" id="calendar" class="calendrier" autocomplete="off" placeholder="Jour de sortie / nombre de jour" >
+		<br>
+		<br>
+		<input type="submit" name="sender" class="sender" id="loger" placeholder="" value="ENREGISTRER" >
+		<br>
+		<div class="warning_zone">
+		</div>
+		<div class="bedroom">
+			<img src="@routes.Assets.at("images/bedroom/2.jpg")" height="135px" width="285px">
+		</div>
+		
+	</div>
+</form>
+-->
+
+

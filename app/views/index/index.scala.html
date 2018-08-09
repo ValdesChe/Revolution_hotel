@@ -1,0 +1,137 @@
+@(loginForm: Form[Application.Login])
+
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>@Messages("title")</title>
+
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/font-awesome.min.css")">
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/stylism.css")">
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index/page.css")">
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/index/style.css")">
+
+		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+		<script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
+
+		<style>
+			.processing{
+				left:80px;
+				position: relative;
+			}
+
+			.bar:before{
+				content:'';
+				display:block;
+				left:0;
+				top:0;
+				height:20px;
+				width:7px;
+				background-color:#FF0000;
+				position:absolute;
+				animation:spin 1.2s linear 1s infinite;
+			}
+
+
+			.bar:after{
+				content:'';
+				display:block;
+				left:7px;
+				top:0;
+				box-shadow:5px 2px 7px black;
+				height:20px;
+				width:7px;
+				background-color:red
+				position:absolute;
+				animation:spin 1.5s linear -1s infinite;
+			}
+
+			.bar span:first-child{
+				content:'';
+				display:block;
+				left:15px;
+				top:0;
+				height:20px;
+				width:7px;
+				box-shadow:0px 2px 7px red;
+				background-color:red;
+				position:absolute;
+				animation:spin 1s linear 0s infinite;
+			}
+
+			.bar >span span{
+				content:'';
+				display:block;
+				left:15px;
+				top:0;
+				box-shadow:0px 2px 7px red;
+				height:20px;
+				width:7px;
+				background-color:red;
+				position:absolute;
+				animation:spin 1s linear 0s infinite;
+				}
+
+
+		</style>
+		<script language="Javascript" >
+			$(document).ready(function(){
+				$('.button').click(function (){
+					$(this).closest('.button').hide();
+					$(this).closest('.button').after("<div class='processing'> <span class='bar'>  <span> <span class='bar'> <span> </span></span> </div>");
+				});
+			});
+
+		</script>
+	</head>
+	<body  id="login_page">
+		@wflash()
+		<!-- Printing my menu-->
+		@menu(null)
+
+		<!-- content -->
+		<div id="body_login" class="contener">
+			@pub()
+			
+			<div id="wrapper">
+				@form(routes.Application.authenticate(), 'class -> "login-form" ,'name-> "login-form") {
+				   <div class="header">
+				       <h1>@Messages("signin.signin")</h1>
+				        
+				    </div>    
+				    <div class="content">
+				        @inputText(
+				            loginForm("email"),
+				            'placeholder -> Messages("email"),
+				            '_label -> null,
+				            '_help -> Messages("signin.your.email"),
+				            'class -> "input username"
+				        )
+				        @inputPassword(
+				            loginForm("password"),
+				            '_label -> null,
+				            'placeholder -> Messages("password"),
+				            '_help -> Messages("signin.your.password"),
+				            'class -> " input password"
+				        )
+				    </div>
+
+				    <div class="footer">
+				        <input type="submit" class="button" value="@Messages("signin.signin")">
+				    </div>
+
+				}
+			</div>
+		</div>
+		
+		<script src="@routes.Assets.at("javascripts/jquery/jquery-2.1.0.min.js")" type="text/javascript"></script>
+		<script src="@routes.Assets.at("javascripts/password.js")" type="text/javascript"></script>
+		<script type="text/javascript" src="@routes.Assets.at("stylesheets/index/jquery.jDiaporama.js")"></script>
+		<script type="text/javascript" src="@routes.Assets.at("stylesheets/index/script.js")"></script>
+	</body>
+</html>

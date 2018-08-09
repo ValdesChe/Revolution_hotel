@@ -1,0 +1,57 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+GET     /dashboard                  controllers.Dashboard.index()
+
+#Shortcut  management
+GET     /dashboard/                 controllers.Shortcutering.NewBedTYpe( typeName , typePrice )
+#difficulte en matiere de passage de params à notre template dashboard
+#GET     /dashboard/                 controllers.Shortcutering.NewBedTYpe( typeName , typePrice )
+
+
+POST    /login                      controllers.Application.authenticate()
+#GET     /login                      controllers.Application.login()
+
+
+GET     /Customer                     controllers.Customering.index()
+GET     /Customer/                     controllers.Customering.index()
+
+POST    /Customer                    controllers.Customering.validate()
+POST    /Customer/Final              controllers.Customering.saveNew()
+
+POST    /Customer/tmp              controllers.Customering.saveTempo()
+
+
+GET     /Bedroom                     controllers.Bedrooming.index()
+GET     /Bedroom/:id                 controllers.bedroom.BedroomInfo.printBedInfo(id:Long)
+GET     /Bedroom/:id/print           controllers.bedroom.BedroomInfo.printInfo(id:Long)
+POST     /Bedroom                    controllers.Bedrooming.saveNewBed()
+
+GET     /TypeBedroom/                   controllers.bedroom.TypeBedroomInfo.printInfoTypeBed(libeleType:String)
+GET     /TypeBedroom/:libeleType        controllers.bedroom.TypeBedroomInfo.printInfoTypeBed(libeleType:String)
+
+
+# Registers the user, sending an email to confirm the account.
+#GET     /signup                     controllers.account.Signup.create()
+#POST    /signup                     controllers.account.Signup.save()
+
+
+#GET     /Settings                   controllers.account.settings.Index.index()
+
+# Accessed when the user confirms the registration.
+#GET     /confirm/:confirmToken      controllers.account.Signup.confirm(confirmToken:String)
+
+# Resets the password using the password.
+#GET     /reset/:token               controllers.account.Reset.reset(token:String)
+#POST    /reset/:token               controllers.account.Reset.runReset(token:String)
+
+#GET     /email/:token               controllers.account.settings.Email.validateEmail(token:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET  	/assets/*file  				controllers.Assets.versioned(path="/public", file: Asset)
+

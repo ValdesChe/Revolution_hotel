@@ -1,0 +1,112 @@
+   
+   /*Only for stat.php :::Revolution 21/02/2015:::*/
+   
+   #zone_stat{
+	width:98%;
+	height:80%;
+	background:linear-gradient(white,rgba(15,185,325,0.2),white,rgba(15,185,325,0.5),oldlace);
+	border-radius:8px;
+	position:relative;
+	padding:15px 5px 5px 5px;
+	margin-right:10px;
+	overflow:scroll;
+	}
+	
+	#chamb1{
+	
+	width:31%;
+	height:auto;
+	background:rgba(211,250,125,0.6);
+	padding:5px 4px 10px 5px;
+	margin-top:5px;
+	border-radius:5px;
+	float:left;
+	}
+	    
+		
+		
+
+	
+	#chamb2{
+	width:31%;
+	height:auto;
+	background:rgba(165,220,115,0.7);
+	padding:4px 4px 10px 5px;
+	border-radius:5px;
+	margin-left:32.5%;
+	margin-top:5px;
+	position:absolute;
+	}
+	
+    
+	#chamb3{
+	width:31%;
+	height:auto;
+	background:rgba(165,230,135,0.6);
+	padding:4px 4px 10px 4px;
+	margin-top:5px;
+	margin-right:10px;
+	border-radius:5px;
+	float:right;
+	}
+	
+	#completed_info{
+	background:linear-gradient(white,rgba(15,125,325,0.5),oldlace);
+	width:65%;
+	height:30%;
+	margin-top:27%;
+	border:1px solid grey;
+	}
+	
+	#completed_info h5{
+	 color: olive;
+	 font-weight: bold;
+	 text-align:center;
+	 border:1px solid blue;
+	}
+	
+	#zone_stat h3{
+	 border:1px solid green;
+	 background: lightblue;
+	 color: tomato;
+	 font-family: 'Bree Serif', serif;
+	 font-weight: bold;
+	 text-align:center;
+	}
+	
+	
+	#ch {
+	border:1px solid aqua;
+	background:white;
+	font-size:17px;
+	opacity:0.7;
+	text-align:center;
+	border-radius:5px;
+	padding:2px 2px 2px 5px;
+	transition: all 1s ease-in;
+	}
+	
+	#ch:hover {
+	width:101%;
+	font-size:20px;
+	padding:4px 3px 3px 4px;
+	background:rgba(12,254,362,0.9);
+	opacity:0.9;
+	cursor:pointer;
+	color:white;
+	}
+	
+	
+    #img_stat{
+      width:15px;
+	  float:right;
+     }	
+	  
+	 #contenu{
+	width:100%;
+	height:auto;
+	margin-top:10%;
+	 
+	 
+    }
+	

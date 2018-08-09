@@ -1,0 +1,166 @@
+/**********
+******************************************************
+                                            **************************************************************************************************** CZV
+ *      STYLE for my view with forms and access menu
+        Created : 06 - 02 - 2018
+        Owner : V@ldoR
+ *****************************************************
+ */
+
+
+     ::selection {
+        color: #fff;
+        background: #f676b2;
+        /* Safari */
+    }
+
+    ::-moz-selection {
+        color: #fff;
+        background: #f676b2;
+        /* Firefox */
+    }
+
+    /***********************************
+    *    MENU-ACCESS Style
+     */
+    /* Container of menu
+    */
+    div.access-menu{
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background:white;
+        box-shadow: 0px 0px 4px 0px grey;
+    }
+
+    /* Menu items
+    */
+
+    ul.items-access{
+        display: block;
+        padding-left: 2px;
+    }
+
+    ul.items-access li{
+        display: inline-block;
+        padding: 2px;
+        background: white;
+    }
+
+    ul.items-access li:after{
+        content: '|';
+        color: blue;
+        font-size: 25px;
+    }
+
+    ul.items-access li:last-child:after{
+        content: ' ';
+       
+    }
+
+    ul.items-access a {
+        padding: 3px;
+        color :blue;
+        font-size: 18px;
+
+    }
+
+    form.shorcutform {
+        background: #fff1fd;
+        padding: 10px;
+        width: 500px;
+        margin: auto;
+    }
+
+    form .form-container-sh {
+        padding: 4px;
+        display: block;
+    }
+
+
+    form .form-item-sh label,
+    form .form-item-sh input {}
+
+    form .form-item-sh label {}
+
+
+    form .form-item-sh input {
+        float: right;
+    }
+
+
+    form .form-submitter-sh {
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+
+
+    form .form_col {
+        display: inline-block;
+        margin-right: 15px;
+        padding: 3px 0px;
+        width: 200px;
+        min-height: 1px;
+        text-align: right;
+    }
+
+    form input , form select {
+        border: 1px solid #CCC;
+
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        outline: none;
+        /* Retire la bordure orange appliquÃ©e par certains
+	navigateurs (Chrome notamment) lors du focus des Ã©lÃ©ments <input> */
+    }
+
+
+    form input[type='text'] ,  form input[type='number'], form select  {
+        width: 200px;
+        height: 30px;
+        padding:5px;
+        border: 1px solid black;
+
+        padding: 2px;
+        border: 1px solid #CCC;
+
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        outline: none;
+        /* Retire la bordure orange appliquÃ©e par certains
+	navigateurs (Chrome notamment) lors du focus des Ã©lÃ©ments <input> */
+    }
+
+
+
+    form input[type='text']:focus , form input[type='number']:focus , form select:focus  {
+
+        border-color: rgba(82, 168, 236, 0.75);
+        -moz-box-shadow: 0 0 8px rgba( 82, 168, 236, 0.5);
+        -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+        box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+    }
+
+
+
+    form .tooltip {
+        display: inline-block;
+        margin-left: 20px;
+        padding: 2px 4px;
+        border: 1px solid red;
+        font-size: 13px;
+        background-color: white;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        color: black;
+        opacity: 0.8;
+    }
+
+
+
+    form .validator-btn-sh{
+
+    }

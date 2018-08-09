@@ -1,0 +1,66 @@
+@(user: User )
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+
+
+@if(user != null) {
+
+<header>
+    <nav>
+        <ul class="menu">
+            @if(user.typeu_id == "2") {
+            <li class="visible"><a class="home_link" href="@controllers.routes.Dashboard.index()"><img src="@routes.Assets.at("images/home.png")"></a></li>
+            
+            <li class="visible"><a class="liens" href="@controllers.routes.Bedrooming.index()">@Messages("menu.setting")</a></li>
+            <li class="visible">
+                <a href="#" class="liens">@Messages("menu.stat")</a>
+                <ul class="scroll">
+                    <li><a href="@controllers.routes.Bedrooming.index()">@Messages("menu.bed")</a></li>
+                    <li><a href="@controllers.routes.Customering.index()">Customer</a></li>
+                    <li><a href="">@Messages("menu.search")</a></li>
+                </ul>
+            </li>
+            
+            <li class="visible"><a href="#" class="liens">@Messages("menu.reserve")</a></li>
+            
+            
+            }
+        </ul>
+        <div class="notif_zone">
+            <form name="searching" action="search.php" method="GET">
+                <span class="search_bar">
+                    <input type="search" class="search_engine" name="searched" maxlength="20" required><input type="submit" value="" class="sender" >
+                </span>
+            </form>
+            <ul class="notif">
+                <li class="fact" ><a class="valid" href="#">0<span class="help">Nombre de facture a editer !!</span></a></li>
+                <li class="reserv"><a class="valid" href="#">2</a></li>
+                <li class="new"><a class="valid" href="#">5</a></li>
+                <!-- <li class="deconnect"><a href="#"><img src="images/dec.png"></a></li>-->
+                
+            </ul>
+        </div>
+        
+    </nav>
+    <div class="titre_principal">
+        
+    </div>
+</header>
+
+}
+
+
+
+
+@if(user == null) {
+<div id="index_header">
+    <div id="contener_index">
+        <div id="logo_place">
+            <h1>Hotel B</h1>
+            
+        </div>
+    </div>
+</div>
+
+}

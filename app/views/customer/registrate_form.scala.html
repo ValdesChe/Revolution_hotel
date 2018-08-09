@@ -1,0 +1,102 @@
+@(AvailableBeds : List[Bedroom] , customerForm: Form[Customering.Registrator])
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@scripts = {
+
+
+}
+
+@form(controllers.routes.Customering.saveNew(), 'class -> "login-form" ,'name-> "login-form") {
+<div class="info_client">
+    <h3>Info clients</h3>
+
+    @helper.inputText(
+    customerForm("name"),
+    'placeholder -> Messages("fullname"),
+    '_label -> null,
+    '_help -> Messages("ngj"),
+    'class -> ""
+    )
+    @inputText(
+    customerForm("tel"),
+    'placeholder -> Messages("telephone"),
+    '_label -> null,
+    '_help -> Messages("ngj"),
+    'class -> "",
+    'type -> "number"
+    )
+
+    @inputText(
+    customerForm("country"),
+    'placeholder -> Messages("Nationalité"),
+    '_label -> null,
+    '_help -> Messages("ngj"),
+    'class -> ""
+    )
+
+    @inputText(
+    customerForm("mat"),
+    'placeholder -> Messages("Numero carte d'identité"),
+    '_label -> null,
+    '_help -> Messages("ngj"),
+    'class -> "",
+    'type -> "number"
+    )
+
+    @inputText(
+    customerForm("email"),
+    'type -> "email",
+    '_label -> null,
+    'placeholder -> Messages("signin.your.email"),
+    '_help -> Messages("signin.your.email"),
+    'class -> ""
+    )
+    <br><br>
+
+    <span class="form_col">Sexe :</span>
+    <label class="selecto">
+
+        @helper.input(customerForm("gender")) { (id, name, value, args) =>
+        <input type="radio" name="@name" id="@id" @toHtmlArgs(args)>
+        }
+        @Messages("Homme")
+    </label>
+    <label class="selecto">
+        @helper.input(customerForm("gender")) { (id, name, value, args) =>
+        <input type="radio" name="@name" id="@id" @toHtmlArgs(args)>
+        }
+        @Messages("Femme")
+    </label>
+    <br><br>
+</div>
+<div class="info_sejour">
+    <h3>Info sejour</h3>
+    <br>
+    @for(beds <- AvailableBeds) {
+
+    }
+
+
+    <select name="bedroom_num" id="large" >
+        <option value="">..* Chambres disponibles *..</option>
+        <optgroup label="Suites">
+            Suites
+        </optgroup>
+
+        <optgroup label="Haut-standing">
+            Haut-standing
+        </optgroup>
+
+        <optgroup label="Classiques">
+            Classiques
+        </optgroup>
+    </select>
+</div>
+<div class="footer">
+    <input type="submit" class="button" value="@Messages("signin.signin")">
+
+</div>
+
+}

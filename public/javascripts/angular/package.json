@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular@1.4.4",
+        "scope": null,
+        "escapedName": "angular",
+        "name": "angular",
+        "rawSpec": "1.4.4",
+        "spec": "1.4.4",
+        "type": "version"
+      },
+      "E:\\PROJET\\Valdes\\OnGoing\\Hotel2.0\\public\\javascripts\\angular-1.1.5"
+    ]
+  ],
+  "_from": "angular@1.4.4",
+  "_id": "angular@1.4.4",
+  "_inCache": true,
+  "_location": "/angular",
+  "_nodeVersion": "0.10.26",
+  "_npmUser": {
+    "name": "angularcore",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "2.0.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular@1.4.4",
+    "scope": null,
+    "escapedName": "angular",
+    "name": "angular",
+    "rawSpec": "1.4.4",
+    "spec": "1.4.4",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular/-/angular-1.4.4.tgz",
+  "_shasum": "9ac24aa5d38802339af99fe63c64a7e9784958b8",
+  "_shrinkwrap": null,
+  "_spec": "angular@1.4.4",
+  "_where": "E:\\PROJET\\Valdes\\OnGoing\\Hotel2.0\\public\\javascripts\\angular-1.1.5",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "HTML enhanced for web apps",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "9ac24aa5d38802339af99fe63c64a7e9784958b8",
+    "tarball": "https://registry.npmjs.org/angular/-/angular-1.4.4.tgz"
+  },
+  "gitHead": "f00cff5525db7c853f42854079a31936d400f99b",
+  "homepage": "http://angularjs.org",
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "bclinkinbeard",
+      "email": "ben.clinkinbeard@gmail.com"
+    },
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.4.4"
+}
